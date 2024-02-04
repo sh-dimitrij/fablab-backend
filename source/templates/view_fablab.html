@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}{{ work_list.title }}{{ data.id }}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'view_fablab.css' %}">
+
+<div class="card-service">
+    <!-- <img src="{% static work_list.image %}" alt="{{ work_list.title }}"> -->
+    <img src="{% static work_list.image %}" alt="{{ work_list.title }}" style="width:100%;height:150px"  class="card-img-top foto_size">
+    <br>
+    <div class="container">
+        <h4><b>{{work_list.title}}</b></h4>
+        <!-- <p>Architect & Engineer</p> -->
+        <div class="card-body">
+        <br>
+        <p class="card-text">{{ work_list.description }}</p>
+        <br>
+        <p class="card-text">Цена: {{ work_list.price }} рублей</p>
+        </div>
+        <br>
+        <a href="{% url 'worktypes' %}" class="btn btn-primary">На главную</a>
+    </div>
+    <br>
+
+</div>
+
+{% endblock %}

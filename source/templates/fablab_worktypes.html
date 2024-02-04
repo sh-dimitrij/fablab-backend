@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+<div class="album">
+    <div class="container">
+        <div class="row">
+            <form method="GET" action="{% url 'worktypes' %}">
+                <div class="search-bar">
+                    <input type="text" class="search__input" name="query" id="search-input" placeholder="Поиск" value="{{search_value}}">
+                    <button type="submit" id="search-button" class="button_search">Поиск</button>
+                </div>
+            </form>
+        
+            {% for offer in filtered_data %}    
+            
+            <div class="card">
+                <img src="../static/{{ offer.image }}" alt="{{ offer.title }}" style="width:100%;height:150px"  class="card-img-top">
+                <br>
+                <div class="container">
+                    <h4><b>{{offer.title}}</b></h4>
+                    <!-- <p>Architect & Engineer</p> -->
+                    <div class="card-body">
+                        <h5 class="card-title">{{ offer.type }}</h5>
+                        <p class="card-text">Цена: {{ offer.price }} рублей</p>
+                    </div>
+                    <div class="linking">
+                        <a href="{% url 'view_fablab' offer.id %}" class="btn-link">Выбрать</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

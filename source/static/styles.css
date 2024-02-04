@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+body {
+    background-image: url('../static/images/fon.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search__input {
+    margin: 0 20px 0 0;
+    padding: 8px 16px;
+    background-color: #c7f900;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    outline: none;
+    transition: all .3s linear;
+    color: rgb(5, 11, 90);
+}
+
+.search__input:hover {
+    border: 1px solid #763900;
+    background-color: #9ac100;
+}
+
+/* Стили для карточек */
+.card {
+    border: 1px solid #cb6607;
+    padding: 10px;
+    margin: 10px;
+    height: 300px;
+    width: 200px;
+    /* Ширина карточки */
+    display: inline-block;
+    /* Располагаем карточки в строку */
+    vertical-align: top;
+    /* Выравниваем по верхнему краю */
+    font-family: Arial, sans-serif;
+    /* Шрифт текста в карточках */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 15px;
+    /* 5px rounded corners */
+    background-color: #06d826cf;
+}
+
+/* .card .container {
+    height: 100%;
+} */
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.linking {
+    padding: 2px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/* Стили для кнопки-ссылки */
+.btn-link {
+    background-color: #b3ff00d7;
+    color: #1e0101;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-link:hover {
+    background-color: #175600;
+    color: #ffffff;
+}
+
+.button_search {
+    border: none;
+    padding: 10px 17px;
+    background: #06d826;
+    cursor: pointer;
+    text-transform: full-width;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(5, 11, 90);
+    margin-left: -15px;
+    border-radius: 100px;
+}
+
+.button_search:hover {
+    background: #ff6600;
+}
+
+
+
+.card2 {
+    border: 1px solid #cb6607;
+    padding: 10px;
+    margin: 10px;
+    height: 250px;
+    width: 200px;
+    /* Ширина карточки */
+    display: inline-block;
+    /* Располагаем карточки в строку */
+    vertical-align: top;
+    /* Выравниваем по верхнему краю */
+    font-family: Arial, sans-serif;
+    /* Шрифт текста в карточках */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 15px;
+    /* 5px rounded corners */
+    background-color: #06d826cf;
+}
