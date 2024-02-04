@@ -1,0 +1,18 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+    <title>Фаблаб</title>
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="icon" href="{% static 'images/ikonka.png' %}" type="image/x-icon">
+
+</head>
+
+<body>
+    <header>
+    </header>
+    {% csrf_token %}
+    {% block content %}{% endblock %}
+</body>
+</html>
