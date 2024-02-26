@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+<div class="album">
+    <div class="container">
+        <div>
+            <a href="{% url 'count_works' %}" class="btn-link">Корзина</a>
+
+        </div>
+        <div class="row">
+            <form method="GET" action="{% url 'fablab_worktypes' %}">
+                <div class="search-bar">
+                    <input type="text" class="search__input" name="work_name" id="search-input" placeholder="Поиск" value="{{search_value}}">
+                    <button type="submit" id="search-button" class="button_search">Поиск</button>
+                </div>
+                
+            </form>
+            
+            {% if not filtered_data %}
+                <p>No data available</p>
+            {% endif %}
+
+            {% for process in filtered_data %}    
+                <div class="card">
+                    {% comment %} <img src="{% static process.imageSource %}" alt="{{ process.title }}" style="width:100%;height:150px" class="card-img-top"> {% endcomment %}
+                    <img src="{% static  process.imageSource %}" alt="{{ process.title }}" style="width:100%;height:150px" class="card-img-top">
+
+                    <br>
+                    <div class="container">
+                        <h4><b>{{process.title}}</b></h4>
+                        <div class="card-body">
+                            {% comment %} <h5 class="card-title">{{ process.title }}</h5> {% endcomment %}
+                            <p class="card-text">Цена: {{ process.price }} рублей</p>
+                        </div>
+                        <div class="linking">
+                            <a href="{% url 'add_work' process.id %}" class="btn-link add-to-cart-btn" data-process-id="{{ process.id }}">Добавить в корзину</a>
+                            <a href="{% url 'view_fablab' process.id %}" class="btn-link">Выбрать</a>
+                            <a href="{% url 'delete_view_fablab' process.id %}" class="btn-link">Удалить</a>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

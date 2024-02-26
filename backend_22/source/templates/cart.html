@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+    {% if titles %}
+        
+        <ul>
+            <h2>Список добавленных заявок:</h2>
+                {% comment %} <li>{{ service.title }} ({{ service.quantity }})</li> {% endcomment %}
+                <div class="card">
+                    <h4><b>{{summik}}</b></h4>
+                    {% for tit in titles %}
+                    <br>
+                        <h5><b>{{tit}}</b></h5>
+                        <div class="card-body">
+                        </div>
+                    <br>
+                    {% endfor %}
+                </div>
+        </ul>
+    {% else %}
+        <p>Корзина пуста</p>
+    {% endif %}
+    <a href="{% url 'fablab_worktypes' %}" class="btn-link">На главную</a>
+{% endblock %}
